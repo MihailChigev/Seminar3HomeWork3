@@ -3,20 +3,26 @@
 // 12821 -> нет
 // 23432 -> да
 
+
 Console.Clear();
 
-Console.WriteLine("Введите пятизначное число: ");
-int number = int.Parse(Console.ReadLine());
-int Digit1 = number / 10000;
-int Digit2 = number % 10;
-int Digit3 = (number / 1000) % 10;
-int Digit4 = (number / 10) % 10;
+void DataEntry(string str)
+{
 
-if (Digit1 == Digit2 && Digit3 == Digit4)
-{
-    Console.WriteLine(" Число " + number + " является полиндромом ");
+    Console.WriteLine(str);
+    int number = int.Parse(Console.ReadLine());
+    int Digit1 = number / 10000;
+    int Digit2 = number % 10;
+    int Digit3 = (number / 1000) % 10;
+    int Digit4 = (number / 10) % 10;
+
+    if (Digit1 == Digit2 && Digit3 == Digit4)
+    {
+        Console.WriteLine(" Число " + number + " является полиндромом ");
+    }
+    else
+    {
+        Console.WriteLine(" Число " + number + "  не является полиндромом ");
+    }
 }
-else
-{
-    Console.WriteLine(" Число " + number + "  не является полиндромом ");
-}
+DataEntry("Введите число: ");
